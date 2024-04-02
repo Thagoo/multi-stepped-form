@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import OccupationStep from "./steps/OccupationStep";
 import InterestStep from "./steps/InterestStep";
+import HaltStep from "./steps/HaltStep3";
+import MathLevelStep from "./steps/MathLevelStep";
+import FinalStep from "./steps/FinalStep";
 
 const DemoComponent = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -8,6 +11,7 @@ const DemoComponent = () => {
   // Input values
   const [occupation, setOccupation] = useState("");
   const [interest, setInterest] = useState("");
+  const [level, setLevel] = useState("");
 
   const handleNext = (e) => {
     e.preventDefault();
@@ -17,6 +21,7 @@ const DemoComponent = () => {
       const formData = new FormData();
       formData.append("occupation", occupation);
       formData.append("interest", interest);
+      formData.append("mathLevel", level);
       let data = Object.fromEntries(formData);
       console.log(data);
     }
@@ -53,7 +58,7 @@ const DemoComponent = () => {
       </ol>
 
       <form onSubmit={handleNext}>
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center gap-4">
           {currentStep === 1 && (
             <OccupationStep
               occupation={occupation}
@@ -64,6 +69,11 @@ const DemoComponent = () => {
           {currentStep === 2 && (
             <InterestStep interest={interest} setInterest={setInterest} />
           )}
+          {currentStep === 3 && <HaltStep />}
+          {currentStep === 4 && (
+            <MathLevelStep level={level} setLevel={setLevel} />
+          )}
+          {currentStep === 5 && <FinalStep />}
 
           <button
             type="submit"
