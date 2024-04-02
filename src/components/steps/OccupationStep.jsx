@@ -50,9 +50,10 @@ export default function OccupationStep({ occupation, setOccupation }) {
       <p className="mb-8 text-xs font-medium leading-none text-gray-500 dark:text-white text-center">
         This will help personalize your experience.
       </p>
-      <div className="flex flex-col gap-3 w-3/4 md:w-[50%]">
+      <div className="flex flex-col gap-3 w-80 md:w-[50%]">
         {inputs.map((item, i) => (
           <div
+            key={i}
             className={`flex gap-3 border-[1px] border-slate-200 pl-4 py-4 rounded-lg  text-sm hover:border-slate-400 ${
               occupation == item.value ? "border-slate-500 shadow-md" : null
             }`}

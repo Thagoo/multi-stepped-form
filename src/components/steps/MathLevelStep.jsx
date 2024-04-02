@@ -31,7 +31,7 @@ export default function LevelStep({ level, setLevel }) {
   };
 
   return (
-    <div className="pt-6 flex flex-col gap-4">
+    <div className="py-10 flex flex-col gap-4">
       <h3 className="mt-4 mb-4 text-2xl font-medium leading-none text-gray-900 dark:text-white text-center">
         What is your math comfort level?
       </h3>
@@ -39,10 +39,10 @@ export default function LevelStep({ level, setLevel }) {
         Choose the highest level you feel confident in - you can always adjust
         later.
       </p>
-      <div className="space-y-4 md:flex md:gap-3 ">
+      <div className="space-y-4 md:space-y-0 md:flex md:gap-3 ">
         {inputs.map((item, i) => (
           <div
-            className={`p-4 flex flex-col items-center gap-6 border-[1px] min-w-36 border-slate-300 pl-4 py-4 rounded-lg  hover:border-slate-400  ${
+            className={`p-4 flex flex-col items-center gap-6 border-[1px] min-w-56 border-slate-300 pl-4 py-4 rounded-lg  hover:border-slate-400  ${
               level == item.value ? "border-slate-600 shadow-md" : null
             }`}
             onClick={(e) => handleClick(item.value)}

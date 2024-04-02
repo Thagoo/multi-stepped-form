@@ -39,43 +39,44 @@ const DemoComponent = () => {
   };
 
   return (
-    <div className="h-screen my-10 px-2 md:px-24 flex flex-col ">
-      <ol className="flex items-center w-full">
+    <div className="h-screen my-10 px-2 md:px-24 ">
+      <div className="flex items-center relative">
         {currentStep > 1 && (
           <div
             onClick={handlePrev}
-            className="cursor-pointer font-light text-4xl flex items-center"
+            className="cursor-pointer font-light text-4xl absolute left 2 md:left-10"
           >
             &#60;
           </div>
         )}
-        {[1, 2, 3, 4, 5].map((step) => (
-          <li
-            key={step}
-            className={`flex-1 flex items-center justify-center ${
-              currentStep >= step
-                ? "text-blue-600 dark:text-blue-500"
-                : "text-gray-400 dark:text-gray-600"
-            }`}
-            style={{
-              position: "relative",
-            }}
-          >
-            <div
-              className={`absolute top-1/2 transform -translate-y-1/2 w-full h-1 ${
+        <ol className="ml-6 md:ml-16 flex items-center w-full ">
+          {[1, 2, 3, 4, 5].map((step) => (
+            <li
+              key={step}
+              className={`flex-1 flex items-center justify-center ${
                 currentStep >= step
-                  ? "bg-blue-600"
-                  : "bg-gray-300 dark:bg-gray-700"
+                  ? "text-blue-600 dark:text-blue-500"
+                  : "text-gray-400 dark:text-gray-600"
               }`}
               style={{
-                zIndex: -1,
-                width: `100%`,
+                position: "relative",
               }}
-            />
-          </li>
-        ))}
-      </ol>
-
+            >
+              <div
+                className={`absolute top-1/2 transform -translate-y-1/2 w-full h-1 ${
+                  currentStep >= step
+                    ? "bg-blue-600"
+                    : "bg-gray-300 dark:bg-gray-700"
+                }`}
+                style={{
+                  zIndex: -1,
+                  width: `100%`,
+                }}
+              />
+            </li>
+          ))}
+        </ol>
+      </div>
       <form onSubmit={handleNext}>
         <div className="flex flex-col justify-center items-center  py-10">
           {currentStep === 1 && (
@@ -97,6 +98,7 @@ const DemoComponent = () => {
           {currentStep === 2 && (
             <>
               <InterestStep interest={interest} setInterest={setInterest} />
+
               <button
                 disabled={!interest}
                 type="submit"
