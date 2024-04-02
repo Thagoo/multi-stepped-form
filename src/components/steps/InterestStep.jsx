@@ -38,13 +38,13 @@ export default function InterestStep({ interest, setInterest }) {
 
   return (
     <>
-      <h3 className="mt-4 mb-4 text-2xl font-medium leading-none text-gray-900 dark:text-white text-center">
+      <h3 className=" mb-4 text-2xl font-medium leading-none text-gray-900 dark:text-white text-center">
         Which describe you the best?
       </h3>
       <p className="mb-8 text-xs font-medium leading-none text-gray-500 dark:text-white text-center">
         This will help personalize your experience.
       </p>
-      <div className="flex flex-col gap-3 w-[50%]">
+      <div className="flex flex-col gap-3 md:w-[50%]">
         {inputs.map((item, i) => (
           <div
             className={`flex gap-3 border-[1px] border-slate-300 pl-4 py-4 rounded-lg  hover:border-slate-500  ${
@@ -52,10 +52,11 @@ export default function InterestStep({ interest, setInterest }) {
             }`}
             onClick={(e) => handleClick(item.value)}
           >
-            <img src={item.icon} alt={item.value} className="h-10 " />
+            <img src={item.icon} alt={item.value} className="h-6 md:h-10 " />
             <div className="flex items-center">
-              <span>{item.label}</span>&nbsp;
-              <span>{item.placeholder}</span>
+              <span className="text-sm md:text-md">
+                {item.label} <span>{item.placeholder}</span>
+              </span>
             </div>
           </div>
         ))}

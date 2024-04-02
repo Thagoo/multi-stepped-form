@@ -44,13 +44,13 @@ export default function OccupationStep({ occupation, setOccupation }) {
 
   return (
     <>
-      <h3 className="mt-4 mb-4 text-2xl font-medium leading-none text-gray-900 dark:text-white text-center">
+      <h3 className=" mb-4 text-2xl font-medium leading-none text-gray-900 dark:text-white text-center">
         Which describe you the best?
       </h3>
       <p className="mb-8 text-xs font-medium leading-none text-gray-500 dark:text-white text-center">
         This will help personalize your experience.
       </p>
-      <div className="flex flex-col gap-3 w-[50%]">
+      <div className="flex flex-col gap-3 w-3/4 md:w-[50%]">
         {inputs.map((item, i) => (
           <div
             className={`flex gap-3 border-[1px] border-slate-200 pl-4 py-4 rounded-lg  text-sm hover:border-slate-400 ${

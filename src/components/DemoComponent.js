@@ -4,8 +4,11 @@ import InterestStep from "./steps/InterestStep";
 import HaltStep from "./steps/HaltStep3";
 import MathLevelStep from "./steps/MathLevelStep";
 import FinalStep from "./steps/FinalStep";
+import { useNavigate } from "react-router-dom";
 
 const DemoComponent = () => {
+  const navigate = useNavigate();
+
   const [currentStep, setCurrentStep] = useState(1);
 
   // Input values
@@ -24,6 +27,8 @@ const DemoComponent = () => {
       formData.append("mathLevel", level);
       let data = Object.fromEntries(formData);
       console.log(data);
+
+      navigate("/learning-path");
     }
   };
   const handlePrev = (e) => {
@@ -34,12 +39,12 @@ const DemoComponent = () => {
   };
 
   return (
-    <div className="h-screen py-6 px-24 flex flex-col ">
-      <ol className="flex items-center w-full mb-4 sm:mb-5">
+    <div className="h-screen my-10 px-2 md:px-24 flex flex-col ">
+      <ol className="flex items-center w-full">
         {currentStep > 1 && (
           <div
             onClick={handlePrev}
-            className="cursor-pointer font-light text-4xl px-2 pb-2 flex items-center"
+            className="cursor-pointer font-light text-4xl flex items-center"
           >
             &#60;
           </div>
@@ -72,7 +77,7 @@ const DemoComponent = () => {
       </ol>
 
       <form onSubmit={handleNext}>
-        <div className="flex flex-col justify-center items-center gap-2">
+        <div className="flex flex-col justify-center items-center  py-10">
           {currentStep === 1 && (
             <>
               <OccupationStep
