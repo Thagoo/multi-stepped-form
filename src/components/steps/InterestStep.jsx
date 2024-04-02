@@ -52,7 +52,12 @@ export default function InterestStep({ interest, setInterest }) {
             }`}
             onClick={(e) => handleClick(item.value)}
           >
-            <img src={item.icon} alt={item.value} className="h-6 md:h-6 " />
+            <img
+              src={item.icon}
+              alt={item.value}
+              className="h-6 md:h-6 "
+              loading="lazy"
+            />
             <div className="flex items-center">
               <span className="text-sm md:text-md">
                 {item.label} <span>{item.placeholder}</span>

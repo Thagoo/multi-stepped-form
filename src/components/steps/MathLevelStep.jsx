@@ -47,7 +47,12 @@ export default function LevelStep({ level, setLevel }) {
             }`}
             onClick={(e) => handleClick(item.value)}
           >
-            <img src={item.icon} alt={item.value} className="h-14" />
+            <img
+              src={item.icon}
+              alt={item.value}
+              className="h-14"
+              loading="lazy"
+            />
             <div className="flex flex-col items-center">
               <span>{item.label}</span>
               <span className="text-gray-500">{item.placeholder}</span>

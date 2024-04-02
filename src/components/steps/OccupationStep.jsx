@@ -59,7 +59,12 @@ export default function OccupationStep({ occupation, setOccupation }) {
             }`}
             onClick={(e) => handleClick(item.value)}
           >
-            <img src={item.icon} alt={item.value} className="h-6 " />
+            <img
+              src={item.icon}
+              alt={item.value}
+              className="h-6 "
+              loading="lazy"
+            />
             <div>
               <span>{item.label}</span>&nbsp;
               <span className="text-slate-600">{item.placeholder}</span>
