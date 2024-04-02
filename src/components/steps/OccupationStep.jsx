@@ -55,7 +55,7 @@ export default function OccupationStep({ occupation, setOccupation }) {
           <div
             key={i}
             className={`flex gap-3 border-[1px] border-slate-200 pl-4 py-4 rounded-lg  text-sm hover:border-slate-400 ${
-              occupation == item.value ? "border-slate-500 shadow-md" : null
+              occupation === item.value ? "border-slate-500 shadow-md" : null
             }`}
             onClick={(e) => handleClick(item.value)}
           >

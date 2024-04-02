@@ -52,7 +52,7 @@ export default function LearningPath() {
               {" "}
               <div
                 className={`relative p-4 flex items-center gap-2 border-[1px] min-w-38 w-auto border-slate-300 pl-4 py-4 rounded-lg  hover:border-slate-400  ${
-                  learningPath == item.value
+                  learningPath === item.value
                     ? "border-slate-600 shadow-md"
                     : null
                 }`}
