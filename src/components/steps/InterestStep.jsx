@@ -47,8 +47,8 @@ export default function InterestStep({ interest, setInterest }) {
       <div className="flex flex-col gap-3 w-[50%]">
         {inputs.map((item, i) => (
           <div
-            className={`flex gap-3 border-[1px] border-slate-900 pl-4 py-4 rounded-lg  hover:border-slate-400  ${
-              interest == item.value ? "border-slate-500 shadow-md" : null
+            className={`flex gap-3 border-[1px] border-slate-300 pl-4 py-4 rounded-lg  hover:border-slate-500  ${
+              interest == item.value ? "border-slate-600 shadow-md" : null
             }`}
             onClick={(e) => handleClick(item.value)}
           >

@@ -43,7 +43,7 @@ export default function LevelStep({ level, setLevel }) {
         {inputs.map((item, i) => (
           <div
             className={`p-4 flex flex-col items-center gap-6 border-[1px] min-w-36 border-slate-300 pl-4 py-4 rounded-lg  hover:border-slate-400  ${
-              level == item.value ? "border-slate-500 shadow-md" : null
+              level == item.value ? "border-slate-600 shadow-md" : null
             }`}
             onClick={(e) => handleClick(item.value)}
           >
